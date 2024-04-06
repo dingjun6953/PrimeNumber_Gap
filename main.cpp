@@ -49,7 +49,22 @@ vector<int> find_gap(int gap,int a, int b){
         }
         if (findgap) break; 
     }
-    
+//another version using iterators of vector
+/*
+ for(auto it1 = primeNumber.begin();it1 != primeNumber.end();it1++){
+        findgap=false;
+        for(auto it2 = primeNumber.begin();it2 != primeNumber.end();it2++){    
+              if(*it2-*it1==gap)       
+            {
+                findgap=true; 
+                num1=*it1;           
+                num2=*it2;        
+                break;
+            }
+        }
+        if (findgap) break; 
+    }
+  */  
     return {num1,num2}; //return this pair of vector as an array
 }
 
