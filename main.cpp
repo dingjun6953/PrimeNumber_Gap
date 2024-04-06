@@ -19,9 +19,12 @@ using namespace std;
 
 vector<int> find_gap(int gap,int a, int b){
     int flag=0;
+    //find all prime numbers 
+    //store them into a vector
     vector<int> primeNumber; 
     for (int i=a; i<=b; i++){
         flag=0;
+        //determine if the nubmer 'i' is a prime number
         for(int j=2;j<=i/2;j++){
             if(i%j==0) {
                 flag=1;
@@ -30,6 +33,7 @@ vector<int> find_gap(int gap,int a, int b){
         }
         if(flag==0) primeNumber.push_back(i); 
     }
+    //find the first pair of two prime numbers from the vector of primeNumber
     bool findgap; 
     int num1, num2; 
     for(auto elm1:primeNumber){
@@ -46,7 +50,7 @@ vector<int> find_gap(int gap,int a, int b){
         if (findgap) break; 
     }
     
-    return {num1,num2}; 
+    return {num1,num2}; //return this pair of vector as an array
 }
 
 
